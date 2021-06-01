@@ -1,7 +1,10 @@
 import React from "react";
 import { Table, Col, Row, Container, Button } from "react-bootstrap";
 
-const TaskList = (props) => {
+const TaskList = ({ tasks = [], deleteTask }) => {
+  const deleteHandler = (index) => {
+    deleteTask({ index });
+  };
   return (
     <Container fluid className="mt-3">
       <Row className="justify-content-md-center">
@@ -16,26 +19,18 @@ const TaskList = (props) => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>props</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>
-                  <Button>
-                    <i class="fas fa-times-circle"></i>
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>
-                  <Button>
-                    <i class="fas fa-check-circle"></i>
-                  </Button>
-                </td>
-              </tr>
+              {tasks.map((task, index) => (
+                <tr key={index}>
+                  <td>{task.task}</td>
+                  <td>{new Date(task.startDate).toLocaleDateString()}</td>
+                  <td>{task.kategotie}</td>
+                  <td>
+                    <Button onClick={() => deleteHandler(index)}>
+                      <i className="fas fa-times-circle"></i>
+                    </Button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </Table>
         </Col>
