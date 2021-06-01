@@ -1,7 +1,10 @@
 import React from "react";
 import { Table, Col, Row, Container, Button } from "react-bootstrap";
 
-const TaskList = ({ tasks = [] }) => {
+const TaskList = ({ tasks = [], deleteTask }) => {
+  const deleteHandler = (index) => {
+    deleteTask({ index });
+  };
   return (
     <Container fluid className="mt-3">
       <Row className="justify-content-md-center">
@@ -22,7 +25,7 @@ const TaskList = ({ tasks = [] }) => {
                   <td>{task.startDate.toLocaleDateString()}</td>
                   <td>{task.kategotie}</td>
                   <td>
-                    <Button>
+                    <Button onClick={() => deleteHandler(index)}>
                       <i className="fas fa-times-circle"></i>
                     </Button>
                   </td>

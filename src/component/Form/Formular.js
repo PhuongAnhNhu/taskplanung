@@ -22,9 +22,10 @@ const Formular = ({onNewToDo}) => {
                 <Form.Label>Aufgabe</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Do Be Do Be Do"
+                  placeholder=""
                   value={task}
                   onChange={(e) => setTask(e.target.value)}
+        
                 />
               </Form.Group>
 
@@ -44,6 +45,7 @@ const Formular = ({onNewToDo}) => {
                   as="select"
                   value={kategotie}
                   onChange={(e) => setKategotie(e.target.value)}
+                  required
                 >
                   <option>Privat</option>
                   <option>Arbeit</option>

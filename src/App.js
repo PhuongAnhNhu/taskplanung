@@ -6,13 +6,24 @@ import TaskList from "./component/TaskList/TaskList";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  // const deleleElement = (array, index) => {
+  //   array.splice(index, 1);
+  //   return array;
+  // };
 
   return (
     <div className="App">
       <Header />
       <main className="py-3">
-        <Formular onNewToDo={(task) =>setTasks([...tasks, task])} />
-        <TaskList tasks={tasks}/>
+        <Formular onNewToDo={(task) => setTasks((currentTasks) => [...currentTasks, task])} />
+        <TaskList
+          tasks={tasks}
+          deleteTask={(index) => {
+            const currTasks = [...tasks]
+            currTasks.splice(index, 1);
+            setTasks(currTasks);
+          }}
+        />
       </main>
       <footer>
         <Foot />
