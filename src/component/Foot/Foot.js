@@ -8,7 +8,7 @@ const Foot = () => {
         <Navbar.Brand>
           <Row className="justify-content-center">
             <Col xs={8}>
-              <Image src="/assets/logo.png" fluid />
+              <Image src="./assets/logo.png" fluid />
             </Col>
           </Row>
         </Navbar.Brand>
