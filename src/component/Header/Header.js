@@ -1,12 +1,15 @@
 import React from "react";
-import { Badge, Row } from "react-bootstrap";
-import "./Header.scss";
+import { Container, Navbar } from "react-bootstrap";
 
 const Header = () => {
   return (
-    <div className="title">
-      <h1>Mein TODO-test</h1>
-    </div>
+    <Navbar bg="primary">
+      <Container className="justify-content-center">
+        <Navbar.Brand>
+          <h1>Mein TODO-test</h1>
+        </Navbar.Brand>
+      </Container>
+    </Navbar>
   );
 };
 
