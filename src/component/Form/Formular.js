@@ -8,6 +8,7 @@ const Formular = ({onNewToDo}) => {
   const [task, setTask] = useState("");
   const [kategotie, setKategotie] = useState("");
 
+
   const saveHandler = () => {
     onNewToDo({task, kategotie, startDate})
   }
@@ -17,15 +18,14 @@ const Formular = ({onNewToDo}) => {
       <Container fluid>
         <Row className="justify-content-md-center">
           <Col xs={12} md={6}>
-            <Form>
+            <Form >
               <Form.Group controlId="aufgabe">
                 <Form.Label>Aufgabe</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder=""
+                  placeholder="Aufgabe hinzufügen..."
                   value={task}
                   onChange={(e) => setTask(e.target.value)}
-        
                 />
               </Form.Group>
 
@@ -40,20 +40,20 @@ const Formular = ({onNewToDo}) => {
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Label>Kategotie</Form.Label>
+                <Form.Label>Kategorie</Form.Label>
                 <Form.Control
                   as="select"
                   value={kategotie}
                   onChange={(e) => setKategotie(e.target.value)}
-                  required
                 >
+                  <option>-</option>
                   <option>Privat</option>
                   <option>Arbeit</option>
                   <option>Schule</option>
                 </Form.Control>
               </Form.Group>
 
-              <Button variant="secondary" onClick={saveHandler}>
+              <Button variant="secondary" onClick={saveHandler} disabled={task ? false : true}>
                 Aufgabe speichen
               </Button>
             </Form>

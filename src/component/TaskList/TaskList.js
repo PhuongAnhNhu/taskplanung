@@ -22,7 +22,7 @@ const TaskList = ({ tasks = [], deleteTask }) => {
               {tasks.map((task, index) => (
                 <tr key={index}>
                   <td>{task.task}</td>
-                  <td>{task.startDate.toLocaleDateString()}</td>
+                  <td>{new Date(task.startDate).toLocaleDateString()}</td>
                   <td>{task.kategotie}</td>
                   <td>
                     <Button onClick={() => deleteHandler(index)}>
