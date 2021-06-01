@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/taskplanung/static/css/main.75a91713.chunk.css",
+    "main.js": "/taskplanung/static/js/main.729397a6.chunk.js",
+    "main.js.map": "/taskplanung/static/js/main.729397a6.chunk.js.map",
+    "runtime-main.js": "/taskplanung/static/js/runtime-main.6e550cee.js",
+    "runtime-main.js.map": "/taskplanung/static/js/runtime-main.6e550cee.js.map",
+    "static/css/2.54aa3351.chunk.css": "/taskplanung/static/css/2.54aa3351.chunk.css",
+    "static/js/2.c3197303.chunk.js": "/taskplanung/static/js/2.c3197303.chunk.js",
+    "static/js/2.c3197303.chunk.js.map": "/taskplanung/static/js/2.c3197303.chunk.js.map",
+    "static/js/3.e20b9f09.chunk.js": "/taskplanung/static/js/3.e20b9f09.chunk.js",
+    "static/js/3.e20b9f09.chunk.js.map": "/taskplanung/static/js/3.e20b9f09.chunk.js.map",
+    "index.html": "/taskplanung/index.html",
+    "static/css/2.54aa3351.chunk.css.map": "/taskplanung/static/css/2.54aa3351.chunk.css.map",
+    "static/css/main.75a91713.chunk.css.map": "/taskplanung/static/css/main.75a91713.chunk.css.map",
+    "static/js/2.c3197303.chunk.js.LICENSE.txt": "/taskplanung/static/js/2.c3197303.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6e550cee.js",
+    "static/css/2.54aa3351.chunk.css",
+    "static/js/2.c3197303.chunk.js",
+    "static/css/main.75a91713.chunk.css",
+    "static/js/main.729397a6.chunk.js"
+  ]
+}
