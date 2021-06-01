@@ -2,6 +2,18 @@ import React from "react";
 import { Table, Col, Row, Container, Button } from "react-bootstrap";
 
 const TaskList = ({ tasks = [], deleteTask }) => {
+  if (tasks.length === 0) {
+    return (
+      <Container fluid className="mt-3">
+        <Row className="justify-content-md-center">
+          <Col xs={12} md={6}>
+            <h2>Alles erledigt, keine offenen Todos!</h2>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+
   const deleteHandler = (index) => {
     deleteTask({ index });
   };
