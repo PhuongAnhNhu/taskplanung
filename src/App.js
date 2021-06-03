@@ -4,6 +4,9 @@ import Formular from "./component/Form/Formular";
 import Header from "./component/Header/Header";
 import TaskList from "./component/TaskList/TaskList";
 import "./App.scss";
+import Barchart from "./component/Barchart/Barchart";
+import Piechart from "./component/Piechart/Piechart";
+
 function App() {
   const [tasks, setTasks] = useState(
     JSON.parse(localStorage.getItem("tasks") || "[]")
@@ -32,6 +35,8 @@ function App() {
             setTasks(currTasks);
           }}
         />
+        <Barchart tasks={tasks}/>
+        <Piechart tasks={tasks} />
       </main>
       <footer>
         <Foot />

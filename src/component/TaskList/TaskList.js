@@ -34,8 +34,8 @@ const TaskList = ({ tasks = [], deleteTask }) => {
               {tasks.map((task, index) => (
                 <tr key={index}>
                   <td>{task.task}</td>
-                  <td>{new Date(task.startDate).toLocaleDateString()}</td>
-                  <td>{task.kategotie}</td>
+                  <td>{task.startDate}</td>
+                  <td>{task.kategorie}</td>
                   <td>
                     <Button onClick={() => deleteHandler(index)}>
                       <i className="fas fa-times-circle"></i>

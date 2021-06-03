@@ -1,24 +1,30 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import DatePicker from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
+import { format } from "date-fns";
+import de from "date-fns/locale/de";
 import "react-datepicker/dist/react-datepicker.css";
 
-const Formular = ({onNewToDo}) => {
+registerLocale("de", de);
+const Formular = ({ onNewToDo }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [task, setTask] = useState("");
-  const [kategotie, setKategotie] = useState("");
-
+  const [kategorie, setKategorie] = useState("");
 
   const saveHandler = () => {
-    onNewToDo({task, kategotie, startDate})
-  }
+    onNewToDo({
+      task,
+      kategorie,
+      startDate: format(startDate, "dd.MM.yyyy"),
+    });
+  };
 
   return (
     <div>
       <Container fluid>
         <Row className="justify-content-md-center">
           <Col xs={12} md={6}>
-            <Form >
+            <Form>
               <Form.Group controlId="aufgabe">
                 <Form.Label>Aufgabe</Form.Label>
                 <Form.Control
@@ -33,8 +39,10 @@ const Formular = ({onNewToDo}) => {
                 <Form.Label>erledigt bis</Form.Label>
                 <Form.Group>
                   <DatePicker
+                    locale="de"
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}
+                    dateFormat="dd.MM.yyyy"
                   />
                 </Form.Group>
               </Form.Group>
@@ -43,8 +51,8 @@ const Formular = ({onNewToDo}) => {
                 <Form.Label>Kategorie</Form.Label>
                 <Form.Control
                   as="select"
-                  value={kategotie}
-                  onChange={(e) => setKategotie(e.target.value)}
+                  value={kategorie}
+                  onChange={(e) => setKategorie(e.target.value)}
                 >
                   <option>-</option>
                   <option>Privat</option>
@@ -53,7 +61,11 @@ const Formular = ({onNewToDo}) => {
                 </Form.Control>
               </Form.Group>
 
-              <Button variant="secondary" onClick={saveHandler} disabled={task ? false : true}>
+              <Button
+                variant="secondary"
+                onClick={saveHandler}
+                disabled={task ? false : true}
+              >
                 Aufgabe speichen
               </Button>
             </Form>
