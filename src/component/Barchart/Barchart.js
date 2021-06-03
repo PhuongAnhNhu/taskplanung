@@ -32,7 +32,7 @@ const Barchart = ({ tasks }) => {
     <Container fluid className="mt-3">
       <Row className="justify-content-md-center">
         <Col xs={12} md={6}>
-          <ResponsiveContainer width="100%" height={300}>
+         {data.length == 0 ?  <div></div> : (<ResponsiveContainer width="100%" height={300}>
             <BarChart
               // width={760}
               // height={300}
@@ -51,7 +51,7 @@ const Barchart = ({ tasks }) => {
               <Legend />
               <Bar dataKey="count" name="Offene Todos" fill="#8884d8" />
             </BarChart>
-          </ResponsiveContainer>
+          </ResponsiveContainer>) }
         </Col>
       </Row>
     </Container>
