@@ -9,12 +9,12 @@ registerLocale("de", de);
 const Formular = ({ onNewToDo }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [task, setTask] = useState("");
-  const [kategotie, setKategotie] = useState("");
+  const [kategorie, setKategorie] = useState("");
 
   const saveHandler = () => {
     onNewToDo({
       task,
-      kategotie,
+      kategorie,
       startDate: format(startDate, "dd.MM.yyyy"),
     });
   };
@@ -51,8 +51,8 @@ const Formular = ({ onNewToDo }) => {
                 <Form.Label>Kategorie</Form.Label>
                 <Form.Control
                   as="select"
-                  value={kategotie}
-                  onChange={(e) => setKategotie(e.target.value)}
+                  value={kategorie}
+                  onChange={(e) => setKategorie(e.target.value)}
                 >
                   <option>-</option>
                   <option>Privat</option>
